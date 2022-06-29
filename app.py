@@ -51,6 +51,9 @@ def predictor():
         to_send = digits_dict[prediction[0]]
         return to_send
 
+@app.route("/favion.ico", methods=['GET'])
+def null() :
+    return "NULL";
 
 if __name__=="__main__" :
     app.run(host='0.0.0.0', port=port, debug=True)
