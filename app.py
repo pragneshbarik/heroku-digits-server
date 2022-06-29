@@ -34,7 +34,7 @@ model = joblib.load(model_address)
 
 @app.route("/", methods=['GET', 'POST'])
 def predictor():
-    if(request.method == 'GET') :
+    if (request.method == 'GET') :
         return "Digits API"
     elif (request.method == 'POST') :
         data = (request.get_json()["data"])
@@ -50,6 +50,7 @@ def predictor():
         prediction  = model.predict(to_predict)
         to_send = digits_dict[prediction[0]]
         return to_send
+
 
 if __name__=="__main__" :
     app.run(host='0.0.0.0', port=port, debug=True)
