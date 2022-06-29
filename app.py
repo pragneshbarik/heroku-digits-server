@@ -27,8 +27,7 @@ digits_dict = {
 app = Flask(__name__)
 CORS(app)
 
-cwd = os.getcwd()
-model_address = cwd + "\model.sav"
+model_address = "model.sav"
 print (model_address)
 model = joblib.load(model_address)
 
